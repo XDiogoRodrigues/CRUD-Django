@@ -1,0 +1,13 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4  border border-success border-3 rounded-3 mt-4 p-3 mb-4">
+                <p class="fs-3"><b>Nome: {{product.name}}</b></p>
+                <p class="fs-3"><b>Price: {{product.price}}</b></p>
+                <p class="fs-3"><b>Quantity: {{product.quantity}}</b></p>
+            </div>
+            <a href="{% url 'products'%} " class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
+{% endblock %}

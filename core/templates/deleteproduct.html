@@ -1,0 +1,18 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row justify content-center">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h2>Você gostaria de apagar o produto?</h2>
+                <div class="data border border-dark rounded-1 p-4 mb-4" style="width: 30%;">
+                    <p class="fs-5">Nome: {{object.name}}</p>
+                    <p class="fs-5">Price: R$ {{object.price}}</p>
+                    <p class="fs-5">Quantity: {{object.quantity}}</p>
+                </div>
+                <input type="submit" value="Apagar" class="btn btn-danger">
+                <a href="{% url 'products' %}" class="btn btn-success">Voltar</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

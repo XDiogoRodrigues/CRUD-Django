@@ -1,0 +1,22 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+    <div class="container mt-4">
+        <div class="row row-cols-1 justify-content-center">
+            <div class="col-md-6 col-11">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" name="name" id="name" class="form-control mb-4">
+    
+                    <label for="quantity" class="form-label">Quantidade</label>
+                    <input type="number" name="quantity" id="quantity" class="form-control mb-4">
+    
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" id="price" class="form-control mb-3" name="price">
+                    <input type="submit" value="Cadastrar" class="btn btn-success">
+                </form>                   
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row justify content-center">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" name="name" id="name" value="{{object.name}}" class="form-control mb-4">
+
+                <label for="quantity" class="form-label">Quantidade</label>
+                <input type="number" name="quantity" id="quantity" value="{{object.quantity}}" class="form-control mb-4">
+
+                <label for="price" class="form-label">Price</label>
+                <input type="text" id="price" class="form-control mb-3" Value="{{object.price}}" name="price">
+                <button type="number" class="btn btn-success">Atualizar</button>
+                <a href="{% url 'products' %}" class="btn btn-success">Voltar</a>
+            </form>                               
+        </div>
+    </div>
+{% endblock %}

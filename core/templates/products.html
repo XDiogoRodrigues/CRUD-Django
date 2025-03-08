@@ -1,0 +1,40 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container p-4 border border-dark mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <a href="{% url 'create' %}" class="btn btn-success">Criar novo Produto</a>
+            </div>
+          
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th class="scope py-4 fs-4">Nome</th>
+                        <th class="scope py-4 fs-4">Preço</th>
+                        <th class="scope py-4 fs-4">Quantidade</th>
+                        <th class="scope py-4 fs-4">Valor Total</th>
+                        <th class="scope py-4 fs-4">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td class="py-3 fs-5"><a href="{% url 'detail' product.id %}" class="ms-3 text-decoration-none text-dark link-primary">{{ product.name }}</a></td>
+                            <td class="py-3 fs-5">{{ product.price_format }}</td>
+                            <td class="py-3 fs-5">{{ product.quantity }}</td>
+                            <td class="py-3 fs-5">{{ product.value_total }}</td>
+                            <td class="py-3 fs-5">
+                                <div class="container-actions ">
+                                    <a href="{% url 'update' product.id %}" class="fs-4 me-2 text-success"><abbr title="Editar"><i class="bi bi-pencil-square"></i></abbr></a>
+                                    <a href="{% url 'delete' product.id %}" class="fs-4 me-2 text-danger"><abbr title="Deletar"><i class="bi bi-x-square"></i></abbr></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
