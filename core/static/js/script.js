@@ -2,11 +2,8 @@ let element = document.querySelector('#price');
 
 let price = element.value;
 let name_ = element.classList
-console.log(name_[0])
 
 let priceFormat = price.replace(',', '.')
-
-console.log(priceFormat)
 
 element.value = priceFormat
 
